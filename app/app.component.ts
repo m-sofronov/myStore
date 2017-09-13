@@ -1,11 +1,28 @@
-import { Component } from '@angular/core';
-     
+import { Component, Input } from '@angular/core';
+
+export class Item {
+	price: number,
+	name: string;
+};
+
+const ITEMS: Item[] = [
+	{price: 100, name: 'First'},
+	{price: 200, name: 'Second'},
+	{price: 300, name: 'Third'},
+];
+
 @Component({
     selector: 'my-app',
-    template: `<label>Введите имя:</label>
-                 <input [(ngModel)]="name" placeholder="name">
-                 <h1>Добро пожаловать {{name}}!</h1>`
+    templateUrl: `app/app.component.html`,
+    styleUrls: [`app/app.component.css`]
 })
+
 export class AppComponent { 
-    name= '';
+	title = 'myStore'
+    items = ITEMS;
+    selectedItem: Item;
+
+    onSelect(item: Item): void {
+    	this.selectedItem = item;
+    }
 }
