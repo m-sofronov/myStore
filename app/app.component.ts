@@ -1,23 +1,29 @@
-import { Component, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Item } from './item';
-
-const ITEMS: Item[] = [
-	{price: 100, name: 'First'},
-	{price: 200, name: 'Second'},
-	{price: 300, name: 'Third'},
-];
+import { ItemService } from './item.service';
 
 @Component({
     selector: 'my-app',
     templateUrl: `app/app.component.html`,
-    styleUrls: [`app/app.component.css`]
+    styleUrls: [`app/app.component.css`],
+    providers: [ItemService];
 })
 
-export class AppComponent { 
+export class AppComponent implements OnInit { 
 	title = 'myStore'
-    items = ITEMS;
+    items: Item[];
     selectedItem: Item;
+
+    constructor(private itemService: ItemService) { }
+
+    getItems(): void {
+        this.itemService.getItems().then(items => this.items = items);
+    }
+
+    ngOnInit(): void {
+        this.getItems();
+    }
 
     onSelect(item: Item): void {
     	this.selectedItem = item;
