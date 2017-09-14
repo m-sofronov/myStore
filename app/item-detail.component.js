@@ -5,29 +5,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var ITEMS = [
-    { price: 100, name: 'First' },
-    { price: 200, name: 'Second' },
-    { price: 300, name: 'Third' },
-];
-var AppComponent = (function () {
-    function AppComponent() {
-        this.title = 'myStore';
-        this.items = ITEMS;
+var item_1 = require("./item");
+var ItemDetailComponent = (function () {
+    function ItemDetailComponent() {
     }
-    AppComponent.prototype.onSelect = function (item) {
-        this.selectedItem = item;
-    };
-    return AppComponent;
+    return ItemDetailComponent;
 }());
-AppComponent = __decorate([
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", item_1.Item)
+], ItemDetailComponent.prototype, "item", void 0);
+ItemDetailComponent = __decorate([
     core_1.Component({
-        selector: 'my-app',
-        templateUrl: "app/app.component.html",
-        styleUrls: ["app/app.component.css"]
+        selector: 'item-detail',
+        templateUrl: "app/item-detail.component.html"
     })
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ItemDetailComponent);
+exports.ItemDetailComponent = ItemDetailComponent;
+//# sourceMappingURL=item-detail.component.js.map

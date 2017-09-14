@@ -1,9 +1,6 @@
 import { Component, Input } from '@angular/core';
 
-export class Item {
-	price: number,
-	name: string;
-};
+import { Item } from './item';
 
 const ITEMS: Item[] = [
 	{price: 100, name: 'First'},
