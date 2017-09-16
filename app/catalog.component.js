@@ -11,29 +11,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var item_service_1 = require("./item.service");
-var ItemsComponent = (function () {
-    function ItemsComponent(itemService) {
+var CatalogComponent = (function () {
+    function CatalogComponent(itemService) {
         this.itemService = itemService;
+        this.items = [];
     }
-    ItemsComponent.prototype.getItems = function () {
+    CatalogComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.itemService.getItems().then(function (items) { return _this.items = items; });
+        this.itemService.getItems()
+            .then(function (items) { return _this.items = items; });
     };
-    ItemsComponent.prototype.ngOnInit = function () {
-        this.getItems();
-    };
-    ItemsComponent.prototype.onSelect = function (item) {
-        this.selectedItem = item;
-    };
-    return ItemsComponent;
+    return CatalogComponent;
 }());
-ItemsComponent = __decorate([
+CatalogComponent = __decorate([
     core_1.Component({
-        selector: 'my-items',
-        templateUrl: "app/items.component.html",
-        styleUrls: ["app/items.component.css"]
+        selector: 'my-catalog',
+        template: "\n<h3>My product</h3>\n<div class=\"grid grid-pad\">\n\t<div *ngFor=\"let item of items\" class=\"col-1-4\">\n\t\t<div class=\"module item\">\n\t\t\t<h4>{{item.name}}</h4>\n\t\t</div>\n\t</div>\n</div>\n\t",
     }),
     __metadata("design:paramtypes", [item_service_1.ItemService])
-], ItemsComponent);
-exports.ItemsComponent = ItemsComponent;
-//# sourceMappingURL=items.component.js.map
+], CatalogComponent);
+exports.CatalogComponent = CatalogComponent;
+//# sourceMappingURL=catalog.component.js.map
