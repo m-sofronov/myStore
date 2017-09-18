@@ -5,16 +5,7 @@ import { ItemService }	from './item.service';
 
 @Component ({
 	selector: 'my-catalog',
-	template: `
-<h3>My product</h3>
-<div class="grid grid-pad">
-	<div *ngFor="let item of items" class="col-1-4">
-		<div class="module item">
-			<h4>{{item.name}}</h4>
-		</div>
-	</div>
-</div>
-	`,
+	templateUrl: `app/catalog.component.html`,
 })
 
 export class CatalogComponent implements OnInit {

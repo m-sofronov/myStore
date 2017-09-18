@@ -9,4 +9,9 @@ export class ItemService {
 	getItems(): Promise<Item[]> {
 		return Promise.resolve(ITEMS);
 	}
+
+	getItem(name: string): Promise<Item> {
+ 		 return this.getItems()
+             .then(items => items.find(item => item.name === name));
+}
 }

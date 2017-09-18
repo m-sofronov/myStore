@@ -38,7 +38,11 @@ AppModule = __decorate([
                     path: '',
                     redirectTo: '/catalog',
                     pathMatch: 'full'
-                }
+                },
+                {
+                    path: 'detail/:name',
+                    component: item_detail_component_1.ItemDetailComponent
+                },
             ])
         ],
         declarations: [

@@ -14,6 +14,10 @@ var ItemService = (function () {
     ItemService.prototype.getItems = function () {
         return Promise.resolve(mock_items_1.ITEMS);
     };
+    ItemService.prototype.getItem = function (name) {
+        return this.getItems()
+            .then(function (items) { return items.find(function (item) { return item.name === name; }); });
+    };
     return ItemService;
 }());
 ItemService = __decorate([

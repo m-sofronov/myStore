@@ -26,7 +26,11 @@ import { CatalogComponent }		from './catalog.component';
 				path: '',
 				redirectTo: '/catalog',
 				pathMatch: 'full'
-			}
+			},
+            {
+                path: 'detail/:name',
+                component: ItemDetailComponent
+            },
 		])
     ],
     declarations: [

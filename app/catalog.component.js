@@ -26,7 +26,7 @@ var CatalogComponent = (function () {
 CatalogComponent = __decorate([
     core_1.Component({
         selector: 'my-catalog',
-        template: "\n<h3>My product</h3>\n<div class=\"grid grid-pad\">\n\t<div *ngFor=\"let item of items\" class=\"col-1-4\">\n\t\t<div class=\"module item\">\n\t\t\t<h4>{{item.name}}</h4>\n\t\t</div>\n\t</div>\n</div>\n\t",
+        templateUrl: "app/catalog.component.html",
     }),
     __metadata("design:paramtypes", [item_service_1.ItemService])
 ], CatalogComponent);
