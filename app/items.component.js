@@ -10,10 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+var router_1 = require("@angular/router");
 var item_service_1 = require("./item.service");
 var ItemsComponent = (function () {
-    function ItemsComponent(itemService) {
+    function ItemsComponent(itemService, router) {
         this.itemService = itemService;
+        this.router = router;
     }
     ItemsComponent.prototype.getItems = function () {
         var _this = this;
@@ -25,6 +27,9 @@ var ItemsComponent = (function () {
     ItemsComponent.prototype.onSelect = function (item) {
         this.selectedItem = item;
     };
+    ItemsComponent.prototype.gotoDetail = function () {
+        this.router.navigate(['/detail', this.selectedItem.name]);
+    };
     return ItemsComponent;
 }());
 ItemsComponent = __decorate([
@@ -33,7 +38,8 @@ ItemsComponent = __decorate([
         templateUrl: "app/items.component.html",
         styleUrls: ["app/items.component.css"]
     }),
-    __metadata("design:paramtypes", [item_service_1.ItemService])
+    __metadata("design:paramtypes", [item_service_1.ItemService,
+        router_1.Router])
 ], ItemsComponent);
 exports.ItemsComponent = ItemsComponent;
 //# sourceMappingURL=items.component.js.map

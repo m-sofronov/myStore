@@ -39,7 +39,8 @@ __decorate([
 ItemDetailComponent = __decorate([
     core_1.Component({
         selector: 'item-detail',
-        templateUrl: "app/item-detail.component.html"
+        templateUrl: "app/item-detail.component.html",
+        styleUrls: ["app/item-detail.component.css"]
     }),
     __metadata("design:paramtypes", [item_service_1.ItemService,
         router_1.ActivatedRoute,

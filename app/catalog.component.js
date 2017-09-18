@@ -27,6 +27,7 @@ CatalogComponent = __decorate([
     core_1.Component({
         selector: 'my-catalog',
         templateUrl: "app/catalog.component.html",
+        styleUrls: ["app/catalog.component.css"]
     }),
     __metadata("design:paramtypes", [item_service_1.ItemService])
 ], CatalogComponent);

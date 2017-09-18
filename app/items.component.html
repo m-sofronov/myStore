@@ -6,4 +6,7 @@
   	<span class="badge">{{item.price}}</span> {{item.name}}
   </li>
 </ul>
-<item-detail [item]="selectedItem"></item-detail>
+<div *ngIf="selectedItem">
+  <h2>{{selectedItem.name | uppercase}} the best choice!</h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>

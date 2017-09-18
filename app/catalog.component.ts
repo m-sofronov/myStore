@@ -6,6 +6,7 @@ import { ItemService }	from './item.service';
 @Component ({
 	selector: 'my-catalog',
 	templateUrl: `app/catalog.component.html`,
+	styleUrls: [`app/catalog.component.css`]
 })
 
 export class CatalogComponent implements OnInit {

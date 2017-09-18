@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Item } from './item';
 import { ItemService } from './item.service';
@@ -13,7 +14,9 @@ export class ItemsComponent implements OnInit {
     items: Item[];
     selectedItem: Item;
 
-    constructor(private itemService: ItemService) { }
+    constructor(
+        private itemService: ItemService,
+        private router: Router) { }
 
     getItems(): void {
         this.itemService.getItems().then(items => this.items = items);
@@ -25,5 +28,9 @@ export class ItemsComponent implements OnInit {
 
     onSelect(item: Item): void {
         this.selectedItem = item;
+    }
+
+    gotoDetail(): void {
+        this.router.navigate(['/detail', this.selectedItem.name]);
     }
 }
