@@ -32,4 +32,8 @@ export class ItemDetailComponent implements OnInit {
 	goBack(): void {
   		this.location.back();
 	}
+
+    buyItem(name: string, price: number){
+        alert('This item was added to cart');
+    }
 }

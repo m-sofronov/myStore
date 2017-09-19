@@ -30,6 +30,9 @@ var ItemDetailComponent = (function () {
     ItemDetailComponent.prototype.goBack = function () {
         this.location.back();
     };
+    ItemDetailComponent.prototype.buyItem = function (name, price) {
+        alert('This item was added to cart');
+    };
     return ItemDetailComponent;
 }());
 __decorate([

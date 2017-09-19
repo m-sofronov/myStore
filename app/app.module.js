@@ -14,6 +14,7 @@ var item_detail_component_1 = require("./item-detail.component");
 var items_component_1 = require("./items.component");
 var item_service_1 = require("./item.service");
 var catalog_component_1 = require("./catalog.component");
+var cart_component_1 = require("./cart.component");
 var app_routing_module_1 = require("./app-routing.module");
 var AppModule = (function () {
     function AppModule() {
@@ -29,6 +30,7 @@ AppModule = __decorate([
         ],
         declarations: [
             app_component_1.AppComponent,
+            cart_component_1.CartComponent,
             catalog_component_1.CatalogComponent,
             item_detail_component_1.ItemDetailComponent,
             items_component_1.ItemsComponent

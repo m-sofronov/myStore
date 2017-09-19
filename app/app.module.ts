@@ -7,6 +7,7 @@ import { ItemDetailComponent }  from './item-detail.component';
 import { ItemsComponent }		from './items.component';
 import { ItemService }			from './item.service';
 import { CatalogComponent }		from './catalog.component';
+import { CartComponent }        from './cart.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -18,6 +19,7 @@ import { AppRoutingModule }     from './app-routing.module';
     ],
     declarations: [
     	AppComponent,
+        CartComponent,
     	CatalogComponent,
     	ItemDetailComponent,
     	ItemsComponent
