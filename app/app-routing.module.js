@@ -10,13 +10,11 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var catalog_component_1 = require("./catalog.component");
 var cart_component_1 = require("./cart.component");
-var items_component_1 = require("./items.component");
 var item_detail_component_1 = require("./item-detail.component");
 var routes = [
     { path: '', redirectTo: '/catalog', pathMatch: 'full' },
     { path: 'catalog', component: catalog_component_1.CatalogComponent },
     { path: 'detail/:name', component: item_detail_component_1.ItemDetailComponent },
-    { path: 'items', component: items_component_1.ItemsComponent },
     { path: 'cart', component: cart_component_1.CartComponent },
 ];
 var AppRoutingModule = (function () {
